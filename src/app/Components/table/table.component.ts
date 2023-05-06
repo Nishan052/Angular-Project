@@ -26,8 +26,8 @@ export class TableComponent implements OnInit {
       rate : [''],
       count : ['']
     })
+    //retrveing data
 this.tableService.getData().subscribe(response =>{
-  console.log(response);
   this.mapData(response);
   
 })
@@ -49,7 +49,6 @@ mapData(value: any){
   })
   
   this.dataSlice = this.data.splice(0,5)
- console.log("Data", this.data);
  
 }
 
@@ -72,7 +71,6 @@ onAdd(){
   this.displayStyle = "none";
   alert("Details added succesfully")
 
-  console.log("VALUE", this.data, value);
   
 }
 onEdit(item : any){
@@ -101,8 +99,6 @@ item.isEditable = false
 
 
 onPageChange(event : PageEvent){
-  console.log("Pagination", event);
-  
   const startIndex = event.pageIndex * event.pageSize;
   let endIndex = startIndex + event.pageSize;
   if(endIndex > this.data.length){
@@ -119,7 +115,6 @@ closePopup() {
 }
 onDelete(i:any){
   this.dataSlice.splice(i,1)
-  console.log("ondelete",i);
   
 }
 }
