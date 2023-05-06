@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .header{
+    display: flex;
+    justify-content: center; 
+  }
+  h1{
+    text-align: center;
+    margin: 2rem;
+  }
+  .search{
+    flex: 1;
+    width: 50%;
+    margin: 1rem;
+    float: right;
+}
+
+.header > div > button {
+    flex: 1;
+}
+
+.rating{
+    display: flex;
+    flex-direction: column;
+}
+.rate{
+    flex: 1;
+}
+.count{
+    flex : 1;
+}
+label{
+    margin-top: 1rem;
+}
