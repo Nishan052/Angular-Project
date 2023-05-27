@@ -21,7 +21,7 @@
           <th>ID</th>
           <th>List Name</th>
           <th>No. of Entires</th>
-          <th colspan="3">Action</th>
+          <th >Action</th>
           <th></th>
         </tr>
       </thead>
@@ -29,7 +29,7 @@
       <tbody>
         <tr *ngFor="let value of dataSlice | search: title; let i = index">
           <td>{{ value.id }}</td>
-          <td>
+          <td class="wrappable" style="width:400px;">
                 {{ value.title }}
             </td>
           <td>
