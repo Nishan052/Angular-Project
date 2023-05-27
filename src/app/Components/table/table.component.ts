@@ -66,7 +66,7 @@ onPageChange(event : PageEvent){
 }
 
 
-onDelete(i:any){
+onDelete(i:number){
   this.dataSlice.splice(i,1)
   
 }

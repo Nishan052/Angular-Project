@@ -30,21 +30,10 @@
         <tr *ngFor="let value of dataSlice | search: title; let i = index">
           <td>{{ value.id }}</td>
           <td>
-            <div *ngIf="value.isEditable">
-                <input type="text" [(ngModel)] = "value.title" class="form-control">
-            </div>
-            <div *ngIf="!value.isEditable">
                 {{ value.title }}
-            </div>
             </td>
-          
           <td>
-            <div *ngIf="value.isEditable">
-                <input type="text" [(ngModel)] = "value.category" class="form-control">
-            </div>
-            <div *ngIf="!value.isEditable">
                 {{ value.rating.count }}
-            </div></td>
           <td>
             <img style="padding-right: 10px; cursor: pointer;" width="25" height="15" src="https://img.icons8.com/ios/15/send-mass-email.png" alt="send-mass-email"/>
             <img style="padding-right: 10px;cursor: pointer;" width="25" height="15" src="https://img.icons8.com/ios/15/share--v1.png" alt="share--v1"/>
@@ -52,13 +41,8 @@
             <img style="padding-right: 10px;cursor: pointer;" width="25" height="15" src="https://img.icons8.com/ios/15/000000/trash--v1.png" alt="trash--v1" (click) = "onDelete(i)"/>
            </td>
           <td>
-            <!-- <div *ngIf="value.isEditable">
-                <button class="btn btn-sm btn-success" (click)="onUpdate(value)">Update</button>
-                <button class="btn btn-sm btn-danger" (click)="onCancel(value)">Cancel</button>
-            </div> -->
             <div>
                 <button class="button_D" (click)="onDetails(i)">Details</button>
-                <!-- <button class="btn btn-sm btn-danger" (click)="onDelete(i)">Delete</button> -->
             </div>
         </td>
         </tr>

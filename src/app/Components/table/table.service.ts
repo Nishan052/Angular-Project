@@ -11,7 +11,4 @@ export class TableService {
     return this.http.get<any>("https://fakestoreapi.com/products")
   }
 
-  getDummyData(){
-    return this.http.get<any>("https://dummyjson.com/comments")
-  }
 }
