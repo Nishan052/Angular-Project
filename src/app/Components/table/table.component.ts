@@ -15,7 +15,8 @@ export class TableComponent implements OnInit {
    dataSlice : any[] = [];
    title : string = ""
    displayStyle = "none";
-  tableForm !: FormGroup
+  tableForm !: FormGroup;
+  description : string = "";
   ngOnInit(): void {
     this.tableForm = this.fb.group({
       title : [''],
@@ -31,6 +32,7 @@ this.tableService.getData().subscribe(response =>{
   this.mapData(response);
   
 })
+
   }
 
 mapData(value: any){
@@ -52,50 +54,6 @@ mapData(value: any){
  
 }
 
-onAdd(){
-  let rating = {
-    rate : this.tableForm.value.rate,
-    count : this.tableForm.value.count
-  }
-  let value = {
-    id : this.data.length+1,
-      title : this.tableForm.value.title,
-      price : this.tableForm.value.price,
-      description : this.tableForm.value.description,
-      category : this.tableForm.value.category,
-      image : this.tableForm.value.img,
-      rating : rating,
-      isEditable : false
-  }
-  this.data.push(value);
-  this.displayStyle = "none";
-  alert("Details added succesfully")
-
-  
-}
-onEdit(item : any){
-  this.dataSlice.forEach(element => {
-    element.isEditable = false
-    
-    
-  });
-  item.isEditable = true;
-}
-onUpdate(item : any){
- 
-  item.isEditable = false;
- alert("Details Updated succesfully")
-}
-
-onCancel(item : any){
-this.data.forEach(el =>{
-  if(el.id == item.id){
-  }
-}
-
-)
-item.isEditable = false
-}
 
 
 onPageChange(event : PageEvent){
@@ -107,14 +65,13 @@ onPageChange(event : PageEvent){
   this.dataSlice = this.data.slice(startIndex, endIndex)
 }
 
-openPopup() {
-  this.displayStyle = "block";
-}
-closePopup() {
-  this.displayStyle = "none";
-}
+
 onDelete(i:any){
   this.dataSlice.splice(i,1)
   
+}
+
+onDetails(i:number){
+  this.description =  this.dataSlice[i].description
 }
 }

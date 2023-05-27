@@ -39,3 +39,39 @@ table {
 label{
     margin-top: 1rem;
 }
+.button_top{
+  padding: 0.5rem;
+  font-size: 12px;
+  color: white;
+  border: none;
+  background-color: rgb(11, 33, 40);
+  margin: 1em;
+  border-radius: 3px;
+}
+
+.button_transperant{
+  padding: 0.5rem;
+  font-size: 12px;
+  color: black;
+  border: none;
+  background-color: transparent;
+  margin: 1em;
+  border-radius: 3px;
+}
+
+.button_D{
+  padding: 0.5rem;
+  font-size: 12px;
+  color: black;
+  border: none;
+  background-color: transparent;
+  border-radius: 1px;
+}
+
+.button_D:hover{
+  background-color: white;
+  border-bottom: 5px solid black;
+}
+// img{
+//   padding: 5px;
+// }

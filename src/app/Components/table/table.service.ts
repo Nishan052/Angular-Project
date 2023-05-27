@@ -10,4 +10,8 @@ export class TableService {
   getData(){
     return this.http.get<any>("https://fakestoreapi.com/products")
   }
+
+  getDummyData(){
+    return this.http.get<any>("https://dummyjson.com/comments")
+  }
 }

@@ -1,13 +1,12 @@
-<!--Header -->
+<!-- Header -->
 
 <div class="row header">
     <h1>Angular Project</h1>
 <div >
-    <button
-  type="button"
-  class="btn btn-success"
-  (click)="openPopup()">Add Details
-</button>
+  <button class="button_top"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" id="mainIconPathAttribute" fill="#ffffff"></path> </svg>SAVED LISTS</button>
+  <button class="button_transperant"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16" id="IconChangeColor"> <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" id="mainIconPathAttribute" fill="#ffffff" stroke="#000000"></path> </svg>SAVED FILTERS</button>
+  <button class="button_transperant"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 19 19"> <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/> <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/> <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/> </svg>SAVED HISTORY</button>
+    
     <input type="text" class="search form-control" name="title" [(ngModel)]="title" placeholder="Search">
 </div>
 </div>
@@ -15,18 +14,15 @@
 
 <!-- Table Start -->
 <div class="row">
-  <div class="col-12">
-    <table class="table table-striped table-bordered">
+  <div class="col-9">
+    <table class="table table-hover border-top border-end">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Title</th>
-          <th>Price</th>
-          <th>Description</th>
-          <th>Category</th>
-          <th>Image</th>
-          <th>Rating</th>
-          <th>Options</th>
+          <th>List Name</th>
+          <th>No. of Entires</th>
+          <th colspan="3">Action</th>
+          <th></th>
         </tr>
       </thead>
 
@@ -41,60 +37,28 @@
                 {{ value.title }}
             </div>
             </td>
-          <td>
-            <div *ngIf="value.isEditable">
-                <input type="text" [(ngModel)] = "value.price" class="form-control">
-            </div>
-            <div *ngIf="!value.isEditable">{{ value.price }}
-            </div></td>
-          <td>
-            <div *ngIf="value.isEditable">
-                <input type="text" [(ngModel)] = "value.description" class="form-control">
-            </div>
-            <div *ngIf="!value.isEditable">
-                {{ value.description }}
-            </div></td>
+          
           <td>
             <div *ngIf="value.isEditable">
                 <input type="text" [(ngModel)] = "value.category" class="form-control">
             </div>
             <div *ngIf="!value.isEditable">
-                {{ value.category }}
+                {{ value.rating.count }}
             </div></td>
           <td>
-            
-                <img src="{{value.image}}" style=" width: 30%; height: 30%;">
+            <img style="padding-right: 10px; cursor: pointer;" width="25" height="15" src="https://img.icons8.com/ios/15/send-mass-email.png" alt="send-mass-email"/>
+            <img style="padding-right: 10px;cursor: pointer;" width="25" height="15" src="https://img.icons8.com/ios/15/share--v1.png" alt="share--v1"/>
+            <img style="padding-right: 10px;cursor: pointer;" width="25" height="15" src="https://img.icons8.com/ios/15/pencil--v1.png" alt="pencil--v1"/>
+            <img style="padding-right: 10px;cursor: pointer;" width="25" height="15" src="https://img.icons8.com/ios/15/000000/trash--v1.png" alt="trash--v1" (click) = "onDelete(i)"/>
            </td>
-          <td><table class="table table-bordered" style="border : 1px solid grey; border-radius: 2px;">
-            <tr>
-                <th>Rate</th>
-                <td>
-                    <div *ngIf="value.isEditable">
-                        <input type="text" [(ngModel)] = "value.rating.rate" class="form-control">
-                    </div>
-                    <div *ngIf="!value.isEditable">
-                        {{ value.rating.rate }}
-                    </div></td>
-            </tr>
-            <tr>
-                <th>Count</th>
-                <td>
-                    <div *ngIf="value.isEditable">
-                        <input type="text" [(ngModel)] = "value.rating.count" class="form-control">
-                    </div>
-                    <div *ngIf="!value.isEditable">
-                        {{ value.rating.count }}
-                    </div></td>
-            </tr>
-          </table></td>
           <td>
-            <div *ngIf="value.isEditable">
+            <!-- <div *ngIf="value.isEditable">
                 <button class="btn btn-sm btn-success" (click)="onUpdate(value)">Update</button>
                 <button class="btn btn-sm btn-danger" (click)="onCancel(value)">Cancel</button>
-            </div>
-            <div *ngIf="!value.isEditable">
-                <button class="btn btn-sm btn-success" (click)="onEdit(value)">Edit</button>
-                <button class="btn btn-sm btn-danger" (click)="onDelete(i)">Delete</button>
+            </div> -->
+            <div>
+                <button class="button_D" (click)="onDetails(i)">Details</button>
+                <!-- <button class="btn btn-sm btn-danger" (click)="onDelete(i)">Delete</button> -->
             </div>
         </td>
         </tr>
@@ -107,82 +71,15 @@
               (page) = onPageChange($event)>
 </mat-paginator>
   </div>
+  <div class="col-lg-3">
+    <h2>Description</h2>
+    <hr>
+    <article>{{description}}</article>
+  </div>
 </div>
 <!-- Table End -->
 
-<!-- Add Card -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngStyle]="{'display':displayStyle}">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <form [formGroup] = "tableForm">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Title</label>
-              <input type="text" formControlName = "title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Price</label>
-              <input type="text" formControlName = "price"  class="form-control" id="exampleInputPassword1" placeholder="Price">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Description</label>
-                <input type="text" formControlName = "description"  class="form-control" id="exampleInputPassword1" placeholder="Description">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Category</label>
-                <input type="text" formControlName = "category"  class="form-control" id="exampleInputPassword1" placeholder="Category">
-              </div>
-              <div class="form-group rating">
-                <div class="row">
-                    <label for="exampleInputPassword1">Rating</label>
-                </div>
-                <div class="row">
-                    <input type="text" formControlName = "rate"  class="form-control rate" id="exampleInputPassword1" placeholder="Rate">
-                    <input type="text" formControlName = "count"  class="form-control count" id="exampleInputPassword1" placeholder="Count">
-                </div>
-                
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlFile1">Choose an Image</label>
-                <input type="file" formControlName = "img"  class="form-control-file" id="exampleFormControlFile1">
-              </div>
-              
-            
-            <button type="submit" class="btn btn-primary" (click)="onAdd()">Submit</button>
-          </form>
-  
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" 
-                (click)="closePopup()">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- End add card -->
+
+
+
